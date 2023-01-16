@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\JurusanController;
 use Inertia\Inertia;
 
 /*
@@ -27,6 +28,16 @@ Route::prefix('/guru')->group(function(){
    Route::post('/update/{guru}', [GuruController::class, 'update']);
    Route::get('/destroy/{guru}', [GuruController::class, 'destroy']); 
 });
+
+Route::prefix('/jurusan')->group(function(){
+    Route::get('/index', [JurusanController::class, 'index']);
+    Route::post('/store', [JurusanController::class, 'store']);
+    Route::get('/create', [JurusanController::class, 'create']);
+    Route::get('/edit/{jurusan}', [JurusanController::class, 'edit']);
+    Route::post('/update/{jurusan}', [JurusanController::class, 'update']);
+    Route::get('/destroy/{jurusan}', [JurusanController::class, 'destroy']);
+});
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
