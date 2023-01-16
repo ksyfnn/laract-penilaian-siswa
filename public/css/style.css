@@ -209,3 +209,7 @@ body {
   td .bar{
     width: 25%;
   }
+
+.judul th{
+  color: #ddd;
+}

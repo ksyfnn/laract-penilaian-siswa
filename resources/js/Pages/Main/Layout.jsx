@@ -19,7 +19,7 @@ export default function Layout ({children}) {
                 <a href="/home">HOME</a>
                 {/* {user?.role == 'admin' ? ( */}
                     <>
-                        <a href="/guru/index">ADMIN</a>
+                        <a href="/guru/index">GURU</a>
                         <a href="/jurusan/index">JURUSAN</a>
                         <a href="/kelas/index">KELAS</a>
                         <a href="/siswa/index">SISWA</a>

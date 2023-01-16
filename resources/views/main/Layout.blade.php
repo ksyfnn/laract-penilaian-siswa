@@ -4,17 +4,17 @@
         <title>LARACT PENILAIAN SISWA</title>
     </head>
     <body>
-        /*---------------HEADER---------------*/
+        {{-- /*---------------HEADER---------------*/ --}}
         <div class="header">
             <img src="{{ asset('/gambar/header.jpg') }}" width="100%" height="40%">
         </div>
 
-        /*---------------MENU---------------*/
+        {{-- /*---------------MENU---------------*/ --}}
         <div class='menu'>
             <b>
                 <a href="/home">HOME</a>
                 {{-- @if(session('user')->role == 'admin') --}}
-                        <a href="/guru/index">ADMIN</a>
+                        <a href="/guru/index">GURU</a>
                         <a href="/jurusan/index">JURUSAN</a>
                         <a href="/kelas/index">KELAS</a>
                         <a href="/siswa/index">SISWA</a>
@@ -27,14 +27,14 @@
             </b>
         </div>
 
-        /*---------------CONTENT---------------*/
+        {{-- /*---------------CONTENT---------------*/ --}}
         @yield('content')
 
-        /*---------------FOOTER---------------*/
+        {{-- /*---------------FOOTER---------------*/ --}}
         <div class="footer">
             <center>
                 <p>
-                    $copy; {{ data(Y) }} =  UJIKOMP LSP
+                    &copy; {{ date('Y') }} - UJIKOMP LSP
                 </p>
             </center>
         </div>

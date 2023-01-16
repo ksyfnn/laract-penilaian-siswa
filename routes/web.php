@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\GuruController;
 use Inertia\Inertia;
 
 /*
@@ -17,6 +18,15 @@ use Inertia\Inertia;
 |
 */
 Route::get('/home', [IndexController::class, 'home']);
+
+Route::prefix('/guru')->group(function(){
+   Route::get('/index', [GuruController::class, 'index']);
+   Route::post('/store', [GuruController::class, 'store']);
+   Route::get('/create', [GuruController::class, 'create']);
+   Route::get('/edit/{guru}', [GuruController::class, 'edit']);
+   Route::post('/update/{guru}', [GuruController::class, 'update']);
+   Route::get('/destroy/{guru}', [GuruController::class, 'destroy']); 
+});
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
