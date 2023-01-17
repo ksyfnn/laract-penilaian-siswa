@@ -1,15 +1,15 @@
-@extends('main.Layout')
+@extends('main.layout');
 @section('content')
 <center>
     <b>
-        <h2>ADD DATA MAJOR</h2>
-        <form method="post" action="/jurusan/store">
+        <h2>CREATE DATA MAPEL</h2>
+        <form action="/mapel/store" method="POST">
         @csrf
         <table width="50%">
             <tr>
-                <td class="bar">MAJOR NAME</td>
+                <td class="bar">MAPEL NAME</td>
                 <td class="bar">
-                    <input type="text" name="nama_jurusan">
+                    <input type="text" name="nama_mapel">
                 </td>
             </tr>
             <tr>
@@ -23,4 +23,5 @@
         </form>
     </b>
 </center>
+
 @endsection

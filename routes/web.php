@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\MapelController;
 use Inertia\Inertia;
 
 /*
@@ -36,6 +37,15 @@ Route::prefix('/jurusan')->group(function(){
     Route::get('/edit/{jurusan}', [JurusanController::class, 'edit']);
     Route::post('/update/{jurusan}', [JurusanController::class, 'update']);
     Route::get('/destroy/{jurusan}', [JurusanController::class, 'destroy']);
+});
+
+Route::prefix('/mapel')->group(function(){
+    Route::get('/index', [MapelController::class, 'index']);
+    Route::post('/store', [MapelController::class, 'store']);
+    Route::get('/create', [MapelController::class, 'create']);
+    Route::get('/edit/{mapel}', [MapelController::class, 'edit']);
+    Route::post('/update/{mapel}', [MapelController::class, 'update']);
+    Route::get('/destroy/{mapel}', [MapelController::class, 'destroy']);
 });
 
 Route::get('/', function () {
