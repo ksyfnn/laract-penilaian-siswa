@@ -43,7 +43,7 @@ class MapelController extends Controller
         ]);
 
         Mapel::create($data_mapel);
-        return redirect('/mapel/index')->with('success', 'data has been downloaded!!!');
+        return redirect('/mapel/index')->with('success', 'data has been uploaded!!!');
     }
 
     /**

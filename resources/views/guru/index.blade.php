@@ -3,9 +3,13 @@
     <center>
         <b>
             <h2>LIST DATA GURU</h2>
-        </center>
-            <a href="/guru/create" class="button-primary" style="margin-left: 22%">ADD DATA</a>
-            <center>
+            <a href="/guru/create" class="button-primary">ADD DATA</a>
+            @if (session('success'))
+                <p class="text-success" style="margin-left: 37.5%;">{{ session('success') }}</p>
+            @endif
+            @if (session('error'))
+                <p class="text-danger" style="margin-left: 37.5%;">{{ session('error') }}</p>
+            @endif
             <table cellpadding="10" style="text-align:center;">
                 <tr style="background-color:rgba(24, 58, 252, 0.904)" class="judul">
                     <th>NO</th>

@@ -46,7 +46,7 @@ class GuruController extends Controller
             'password' => 'required'
         ]);
         Guru::create($data_guru);
-        return redirect('/guru/index')->with('succes', 'data guru has been downloaded!!!');
+        return redirect('/guru/index')->with('succes', 'data guru has been uploaded!!!');
     }
 
     /**

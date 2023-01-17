@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jurusan;
-use App\Models\Kelas;
+use App\Models\kelas;
 
-class JurusanController extends Controller
+class SiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class JurusanController extends Controller
      */
     public function index()
     {
-        return view('jurusan.index',[
-            'jurusan' => Jurusan::all()
+        return view('siswa.index', [
+            'kelas' => Kelas::all()
         ]);
     }
 
@@ -27,7 +26,9 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        return view('jurusan.create');
+        return view('siswa.create', [
+            'kelas' => Kelas::all()
+        ]);
     }
 
     /**
@@ -38,11 +39,7 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        $data_jurusan = $request->validate([
-            'nama_jurusan' => 'required'
-        ]);
-        Jurusan::create($data_jurusan);
-        return redirect('/jurusan/index')->with('success', 'data has been uploaded!!!');
+        //
     }
 
     /**
@@ -62,11 +59,9 @@ class JurusanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jurusan $jurusan)
+    public function edit($id)
     {
-        return view('jurusan.edit',[
-            'jurusan' => $jurusan
-        ]);
+        //
     }
 
     /**
@@ -76,14 +71,9 @@ class JurusanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jurusan $jurusan)
+    public function update(Request $request, $id)
     {
-        $data_jurusan = $request->validate([
-            'nama_jurusan' => 'required'
-        ]);
-
-        $jurusan->update($data_jurusan);
-        return redirect('/jurusan/index')->with('success', 'data has been updated!!!');
+        //
     }
 
     /**
@@ -92,15 +82,8 @@ class JurusanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jurusan $jurusan)
+    public function destroy($id)
     {
-        $kelas = Kelas::where('jurusan_id', $jurusan->id)->first();
-
-        if($kelas){
-            return back()->with('error', "$jurusan->nama_kelas masih digunakan di menu jurusan");
-        }
-
-        $jurusan->delete();
-        return redirect('/jurusan/index')->with('success', 'data has been deleted!!!');
+        //
     }
 }
