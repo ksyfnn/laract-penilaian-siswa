@@ -2,7 +2,7 @@
 @section('content')
 <center>
     <b>
-        <h2>ADD DATA KELAS</h2>
+        <h2>LIST DATA KELAS</h2>
         <a href="/kelas/create" class="button-primary">ADD DATA</a>
         <table cellpadding="10" style="text-align: center;">
             <tr style="background-color:rgba(24, 58, 252, 0.904);" class="judul">

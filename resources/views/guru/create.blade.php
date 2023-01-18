@@ -9,13 +9,13 @@
                         <tr>
                         <td class="bar">NIP</td>
                         <td class="bar">
-                            <input type="text" name="nip">
+                            <input type="text" name="nip" placeholder="nip kamu apah">
                         </td>
                         </tr>
                         <tr>
                         <td class="bar">NAMA GURU</td>
                         <td class="bar">
-                            <input type="text" name="nama_guru">
+                            <input type="text" name="nama_guru" placeholder="nama kamu siapah">
                         </td>
                         </tr>
                         <tr>
@@ -28,13 +28,13 @@
                         <tr>
                             <td class="bar">ALAMAT</td>
                             <td class="bar">
-                                <textarea name="alamat" cols="30" rows="10"></textarea>
+                                <textarea name="alamat" cols="30" rows="10" placeholder="alamat rumah kamu dmna"></textarea>
                             </td>
                         </tr>
                         <tr>
                             <td class="bar">PASSWORD</td>
                             <td class="bar">
-                                <input type="password" name="password">
+                                <input type="password" name="password" placeholder="password kamu apah">
                             </td>
                         </tr>
                         <tr>

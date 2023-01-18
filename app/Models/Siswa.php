@@ -13,7 +13,7 @@ class Siswa extends Model
     protected $guarded = ['id'];
     protected $primaryKey = 'id';
 
-    public function class() {
+    public function kelas() {
         return $this->belongsTo(Kelas::class, 'kelas_id', 'id');
     }
 }

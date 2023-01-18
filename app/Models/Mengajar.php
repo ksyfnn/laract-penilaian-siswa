@@ -10,7 +10,7 @@ class Mengajar extends Model
     use HasFactory;
     protected $table = 'mengajars';
     protected $guarded = ['id'];
-    protected $prmaryKey = 'id';
+    protected $primaryKey = 'id';
 
     public function guru () {
         return $this->belongsTo(Guru::class, 'guru_id', 'id');

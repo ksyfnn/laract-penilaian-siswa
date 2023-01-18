@@ -40,7 +40,7 @@
             <tr>
                 <td colspan="2">
                     <center>
-                        <button class="button-warning" type="submit">EDIT</button>
+                        <button class="button-warning" type="submit">CHANGE</button>
                     </center>
                 </td>
             </tr>
