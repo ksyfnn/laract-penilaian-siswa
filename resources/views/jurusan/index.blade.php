@@ -3,6 +3,12 @@
 <center>
     <b>
         <h2>LIST DATA MAJOR</h2>
+    @if (session('success'))
+    <p class="text-success">{{ session('success') }}</p>
+    @endif
+    @if (session('error'))
+    <p class="text-danger">{{ session('error') }}</p>
+    @endif
         <a href="/jurusan/create" class="button-primary">ADD DATA</a>
         <table cellpadding="10" style="text-align:center;">
             <tr style="background-color:rgba(24, 58, 252, 0.904);" class="judul">
