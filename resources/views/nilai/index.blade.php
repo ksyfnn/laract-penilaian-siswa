@@ -9,8 +9,9 @@
         @if (session('error'))
         <p class="text-danger">{{ session('error') }}</p>
         @endif
-
+        @if (session('user')->role == 'guru')
         <a href="/nilai/create" class="button-primary">ADD DATA</a>
+        @endif
         <table cellpadding='10  ' style="text-align: center;">
             <tr style="background-color:rgba(24, 58, 252, 0.904);" class="judul">
                 <th>NO</th>
@@ -31,10 +32,12 @@
                     <td>{{ $n->uts }}</td>
                     <td>{{ $n->uas }}</td>
                     <td>{{ $n->na }}</td>
+                    @if (session('user')->role == 'guru')                
                     <td>
                         <a href="/nilai/edit/{{ $n->id }}" class="button-warning">EDIT</a>
                         <a href="/nilai/destroy/{{ $n->id }}" class="button-danger" onclick="return confirm('realy to delete?')">DELETE</a>
                     </td>
+                    @endif
                 </tr>
             @endforeach
         </table>

@@ -34,6 +34,13 @@ Route::prefix('/guru')->group(function(){
    Route::get('/destroy/{guru}', [GuruController::class, 'destroy']); 
 });
 
+Route::get('/', [IndexController::class, 'index']);
+Route::post('/login/admin', [indexController::class, 'loginAdmin']);
+Route::post('/login/siswa', [indexController::class, 'loginSiswa']);
+Route::post('/login/guru', [indexController::class, 'loginGuru']);
+Route::get('/home', [indexController::class, 'home']);
+Route::get('/logout', [indexController::class, 'logout']);
+
 Route::prefix('/jurusan')->group(function(){
     Route::get('/index', [JurusanController::class, 'index']);
     Route::post('/store', [JurusanController::class, 'store']);
@@ -88,14 +95,14 @@ Route::prefix('nilai')->group(function(){
     Route::get('/destroy/{nilai}', [NilaiController::class, 'destroy']);
 });
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
